@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21bf0ec1-3374-461d-8d74-52b9183abe39" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/team_Mission/submit_2nd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PY4E.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PY4E.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exercise/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/team_Mission/.team_Mission_2.4.py.swp" beforeDir="false" />
-    </list>
+    <list default="true" id="21bf0ec1-3374-461d-8d74-52b9183abe39" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

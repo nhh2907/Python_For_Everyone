@@ -1,5 +1,6 @@
 # 요금 테이블 함수 정의
-def bus_fare(age, pay_type):
+# 함수 이름 동사로 시작
+def calculate_bus_fare(age, pay_type):
 	if age < 8:
 		result = '무료'
 	elif age < 14:
@@ -31,15 +32,17 @@ while True:
 		break
 	except:
 		print('Input must be a number')
-		continue
+		# 무한 루프이므로 여기서 continue는 무의함
+		# continue
 
 # 지불 방법 및 오류 검증
 while True:
 	pay_type = input('Preferable payment type(cash or card)? ')
 	if pay_type != 'cash' and pay_type != 'card':
-		print('Wrong input.\nWrite "cash" or "card" again')
+		print('Wrong input.')
+		print('Write "cash" or "card" again')
 		continue
 	break
 			
 # 요금 테이블  함수 호출
-bus_fare(age, pay_type)
+calculate_bus_fare(age, pay_type)
