@@ -1,7 +1,7 @@
 def even_number(n, m):
-	set_ = [i for i in range(n, m+1)]
+	set_ = [i for i in range(n, m + 1)]
 
-	# n과 m사이의 숫자들 중에  중앙값 인덱스 찾기
+	# n과 m사이의 숫자들 중에 중앙값 인덱스 찾기
 	mid = (m-n+1) // 2
 
 	for num in set_:
