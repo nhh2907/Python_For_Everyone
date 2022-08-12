@@ -1,9 +1,5 @@
-lis = [3, 5, 1, 4, 2]
-print(id(lis))
-lis.sort()
-print(lis)
-print(id(lis.sort()))
-print(id(lis.sort()))
-print(id(lis.sort()))
-print(id(lis.sort()))
-print(id(lis.sort()))
+counts = dict()
+names = ['csev', 'cwen', 'csev', 'zqian', 'cwen']
+for name  in names:
+	counts[name] = counts.get(name, 0) + 1
+print(counts)
