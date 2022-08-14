@@ -4,19 +4,19 @@ import random
 def check_input_error(user_input, largest):
 	length_input = user_input.split()
 	was_space = 1
-	compare = int(length_input[0])
+	i = 0
 
 	# 입력한 숫자들이 3개 이하인지 확인
 	if len(length_input) > 3:
 		print('Maximum number is three')
 		return True
 	
-'''	i = 0
-	while len(length_input) > 1 and i < len(length_input):
-		if int(length_input[i+1]) != int(length_input[i]) + 1: 
-			return False
-		i += 1
-'''			
+	# 입력한 수들은 1씩 증가하며 연속된 숫자들이어야 함
+	while i < len(length_input)-1:
+		if int(length_input[i+1]) != int(length_input[i]) + 1:
+			print('Numuber should be consecutive!')
+			return True
+		i += 1	
 
 	# 숫자 사이에 빈칸 한 개만 존재하는지 확인
 	# 숫자 외의 문자가 입력됐는지 확인
@@ -47,7 +47,7 @@ def play_31game():
 		if check_input_error(user_input, largest):
 			continue
 
-		# 첫번째 숫자는 컴퓨터의 마지막 숫자보다 1 커야함
+		# 사용자의 입력 첫번째 숫자는 컴퓨터의 마지막 숫자보다 1 커야함
 		if int(user_input[:2]) != largest + 1:
 			print('Input number must be one more than computer last number')
 			continue
