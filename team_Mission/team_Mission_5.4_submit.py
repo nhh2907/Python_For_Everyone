@@ -12,7 +12,7 @@ def calculate_100_day(m, d, dow, n):
 	count = 0
 	for i in cal:
 		if total_days > 0:
-			total_days = total_days - i
+			total_days -= i
 			count += 1
 		else:  # total_days 변수가 음수가 되면 마지막에 뺀 달의 일수 다시 더하기
 			total_days = total_days + cal[count - 1]

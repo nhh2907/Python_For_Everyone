@@ -6,10 +6,12 @@ def guess_number():
 	i = 0
 	while i < 3:
 		com_number = random.randint(0, 100)
-		if len(list_com) != 0 and com_number in list_com:
+		if com_number in list_com:
 			continue
+
 		list_com.append(com_number)
 		i += 1
+
 	list_com.sort()
 	print(list_com)
 
@@ -21,7 +23,7 @@ def guess_number():
 		try:
 			user = int(input('숫자를 예측해보세요: '))
 			if user in list_user:
-				print(f'이미 예측에 사용한 수입니다')
+				print('이미 예측에 사용한 수입니다')
 				continue
 			list_user.append(user)
 			count += 1
@@ -35,14 +37,11 @@ def guess_number():
 		elif count == 10:
 			print(f'Hint: 최대값은 {list_com[2]//10} 십대')
 			
-		if list_com[0] == user:
-			print(f'-> 숫자를 맞추셨습니다!! 최소값은 {user}')
-			num_answer += 1
-		elif list_com[1] == user:
-			print(f'-> 숫자를 맞추셨습니다!! 중간값은 {user}')
-			num_answer += 1
-		elif list_com[2] == user:
-			print(f'-> 숫자를 맞추셨습니다!! 최대값은 {user}')
+		types = ['최소값', '중간값', '최대값']
+
+		if user in list_com:
+			index = list_com.index(user)
+			print(f'-> 숫자를 맞추셨습니다!! {types[index]}은 {user}')
 			num_answer += 1
 
 	print('Game is finished')
