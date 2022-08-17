@@ -25,24 +25,23 @@ def check_id_format(id_user):
 
 def check_sex_index(id_user):
 	number = [str(i) for i in range(0, 10)]
-	ox_numbers = {'X':0, 'O':1}
-	flag = 0  #1900년대생: 0, 2000년대생: 1
+	ox_numbers = {'X':False, 'O':True}
+	is_2000_person = False  #1900년대생: False, 2000년대생: True
 
-	# 00~21로 시작하면 2000년대생인지 1900년대생인지 flag에 저장
-	if (id_user[0] in number[:2] and id_user[1] in number[:]) \
-		or (id_user[0] == number[2] and id_user[1] in number[:2]):
+	# 00~21로 시작하면 2000년대생인지 1900년대생인지 is_2000_person에 저장
+	if 0 <= int(id_user[:2]) < 22:
 		answer = input("Enter 'O' if 2000's, 'X' if 1900's: ").upper()
-		flag = ox_numbers[answer]
+		is_2000_person = ox_numbers[answer]
 	
 	# 2000년대생인데 뒷자리가 3,4가 아니면 오류
 	# 1900년대생인데 뒷자리가 1,2가 아니면 오류
-	if flag and id_user[7] not in number[3:5]:
+	if is_2000_person and id_user[7] not in number[3:5]:
 		return False
-	elif flag == 0 and id_user[7] not in number[1:3]:
+	elif is_2000_person == 0 and id_user[7] not in number[1:3]:
 		return False
 
 	# 함수 빠져나가기 전에 년도 앞 두 글자 19 또는 20을 미리 출력함
-	if flag == 1:
+	if is_2000_person == True:
 		print('20', end='')
 	else:
 		print('19', end='')
@@ -50,7 +49,7 @@ def check_sex_index(id_user):
 	return True
 
 def check_id(id_user):
-	sex = ['남자', '여자', '남자', '여자']
+	sex = ['남자', '여자'] * 2
 	if not check_id_format(id_user) or not check_sex_index(id_user):
 		print('Wrong id numbers. An id number format is ######-#######')
 		print('Or just wrong number','Check the number and Try again',sep='\n')

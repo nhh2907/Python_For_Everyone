@@ -6,13 +6,18 @@ def check_wrong(e):
 			return True
 	
 	# 위의 조건을 만족했으면 다음 추가 조건에 부합하는지 확인
-	if e[1].startswith('010') and len(e[1]) == 13 and e[1].count('-') == 2 \
-		and e[1][3] == '-' and e[1][8] == '-':
+	if (
+		e[1].startswith('010')
+		and len(e[1]) == 13
+		and e[1].count('-') == 2
+		and e[1][3] == '-'
+		and e[1][8] == '-'
+	):
 		return False
 
 	return True
 
-def wrong_guest_book(guest_book):
+def check_guest_wrong_numbers(guest_book):
 	list_guests = guest_book.split()
 
 	fh = open('right_guest_book.txt', 'w')
@@ -30,4 +35,4 @@ guest_book = """ 김갑,123456789
 최정,111-1111-1111
 정무,010-3333-3333 """
 
-wrong_guest_book(guest_book)
+check_guest_wrong_numbers(guest_book)
