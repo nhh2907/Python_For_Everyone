@@ -1,16 +1,15 @@
 def manage_members(names, records):
-	di = dict()
+	names_to_averages = dict()
 	new_list = list()
 
 	# 평균을 구하고 딕셔너리에 삽입
-	i = 0
-	for name in names:
-		avg= sum(records[i]) / len(records[i])
-		di[name] = avg
-		i += 1	
+	# enumerate의 용법을 익힘
+	for i, name in enumerate(names):
+		avg = sum(records[i]) / len(records[i])
+		names_to_averages[name] = avg
 
 	# (평균값, 이름) 튜플로 새로운 리스트에 삽입
-	for name, avg in di.items():
+	for name, avg in names_to_averages.items():
 		new_list.append((avg, name))
 
 	# 내림차순으로 정렬
