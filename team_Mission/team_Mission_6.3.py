@@ -2,12 +2,13 @@ def calculate_ROE(stocks, sells):
 	new_list = list()
 	stocks = stocks.split(',')
 
-	i = 0
-	for stock in stocks: 
+	# 여기서도 enumerate를 사용
+	for i, stock in enumerate(stocks): 
 		stock = stock.split('/')
-		ROE = ((sells[i]-int(stock[2])) / int(stock[2])) * 100
-		new_list.append((ROE, stock[0]))
-		i += 1
+		# 인덱스를 하드코딩하는 것 대신 언패킹으로 간단히 할 수 있음
+		name, num, average = stock
+		ROE = ((sells[i]-int(average)) / int(average)) * 100
+		new_list.append((ROE, name))
 
 	new_list.sort(reverse=True)
 
