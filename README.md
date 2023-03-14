@@ -12,4 +12,5 @@ The University of Michigan : Charles Russell Severance
 ### 역할
 팀장 - 리드부스터
 
+### 수료증
 <img src = https://github.com/nhh2907/Python_For_Everyone/blob/master/Certificate/Certificate_Boostcourse_X_ModuLab_For_Python.png>
